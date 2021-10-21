@@ -1,0 +1,25 @@
+body a input {
+    text-align: center;
+    height: 25px;
+    margin-right: 10px;
+    width: 80px;
+    margin-bottom: 15px;
+  }
+  
+  html body table {
+    text-align: left;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+  }
+  
+  tbody tr th {
+    padding-right: 50px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  tbody tr td {
+  text-align: center;
+  padding-right: 50px;
+}

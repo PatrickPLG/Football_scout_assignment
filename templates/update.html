@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href='/static/style.css' />
+</head>
+<body>
+<h1>Rediger spiller</h1>
+<br>
+<form method="post" action="/update">
+    <label for="update">Vælg spiller:</label>
+    <select id="update" name="updateplayer" size="1">
+      {% for goalkeeper in goalkeepers %}
+      <option name="updateplayer" value="g{{ goalkeeper.id }}">Målmand - {{ goalkeeper.name }}</option>
+      {% endfor %}
+      {% for defender in defenders %}
+      <option name="updateplayer" value="d{{ defender.id }}">Forsvar - {{ defender.name }}</option>
+      {% endfor %}
+      {% for midfielder in midfielders %}
+      <option name="updateplayer" value="m{{ midfielder.id }}">Midtbane - {{ midfielder.name }}</option>
+      {% endfor %}
+      {% for attacker in attackers%}
+      <option name="updateplayer" value="a{{ attacker.id }}">Angriber - {{ attacker.name }}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <p>Indsæt ny værdi for redninger/blokeret/afleveringer/mål</p>
+    <input type="text" name="update_name" placeholder="Indsæt nyt navn">
+    <input type="number" name="update_age" placeholder="Indsæt ny alder">
+    <input type="text" name="update_team" placeholder="Indsæt nyt hold">
+    <input type="number" name="update_value" placeholder="Indsæt ny værdi">
+    <input type="submit" value="Rediger">
+  </form>
+</body>
+</html>

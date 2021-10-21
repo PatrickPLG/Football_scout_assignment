@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <a href="/create">Opret spiller</a>
+    <a href="/delete">Slet spiller</a>
+    <a href="/update">Rediger spiller</a>
+
+    <h1>Spillere</h1>
+
+    <!-- Målmand -->
+    <h3>Målemænd</h3>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Navn</th>
+        <th>Alder</th>
+        <th>Hold</th>
+        <th>Redninger</th>
+      </tr>
+      {# Viewet viser spillerne i hver sin række. #} 
+      {% for goalkeeper in goalkeepers %}
+      <tr>
+        <td>{{ goalkeeper.id }}</td>
+        <td>{{ goalkeeper.name }}</td>
+        <td>{{ goalkeeper.age }}</td>
+        <td>{{ goalkeeper.team }}</td>
+        <td>{{ goalkeeper.saves }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br />
+
+    <!-- Forsvar -->
+    <h3>Forsvar</h3>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Navn</th>
+        <th>Alder</th>
+        <th>Hold</th>
+        <th>Bolde blokeret</th>
+      </tr>
+      {# Viewet viser spillerne i hver sin række. #} 
+      {% for defender in defenders %}
+      <tr>
+        <td>{{ defender.id }}</td>
+        <td>{{ defender.name }}</td>
+        <td>{{ defender.age }}</td>
+        <td>{{ defender.team }}</td>
+        <td>{{ defender.blocked }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br />
+
+    <!-- Midtbane -->
+    <h3>Midtbane</h3>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Navn</th>
+        <th>Alder</th>
+        <th>Hold</th>
+        <th>Afleveringer</th>
+      </tr>
+      {# Viewet viser spillerne i hver sin række. #} 
+      {% for midfielder in midfielders %}
+      <tr>
+        <td>{{ midfielder.id }}</td>
+        <td>{{ midfielder.name }}</td>
+        <td>{{ midfielder.age }}</td>
+        <td>{{ midfielder.team }}</td>
+        <td>{{ midfielder.passes }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br />
+
+    <!-- Angriber -->
+    <h3>Angribere</h3>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Navn</th>
+        <th>Alder</th>
+        <th>Hold</th>
+        <th>Mål</th>
+      </tr>
+      {# Viewet viser spillerne i hver sin række. #} 
+      {% for attacker in attackers %}
+      <tr>
+        <td>{{ attacker.id }}</td>
+        <td>{{ attacker.name }}</td>
+        <td>{{ attacker.age }}</td>
+        <td>{{ attacker.team }}</td>
+        <td>{{ attacker.goals }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
